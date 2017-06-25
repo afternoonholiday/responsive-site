@@ -1,0 +1,175 @@
+@import "compass";
+@import url(https://fonts.googleapis.com/css?family=Abel);
+//font family
+$baseFontFamily :'游ゴシック', YuGothic, 'メイリオ', Verdana, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+
+//colors
+$baseColor: #FFFBC0;
+$subColor: #FF9519;
+$keyColor: #A5D0E3;
+$fontColor: #261E20;
+
+/*Base
+----------------------------------------------------------------------------*/
+html{font-size: 62.5%;}
+
+body{
+    color: $fontColor;
+    font-size: 1.4rem;
+    font-family: $baseFontFamily;
+    line-height: 1.6;
+    letter-spacing: 0.1rem;
+    background-color: $baseColor;
+}
+
+a{
+  @include link-colors($keyColor, darken($keyColor, 10%), lighten($keyColor, 5%), darken($keyColor, 10%));
+  text-decoration: none;
+}
+
+/*Align
+-----------------------------------------------------------------------------*/
+.text-center{
+    text-align: center;
+}
+
+
+/*Font
+-----------------------------------------------------------------------------*/
+.abel{
+    font-family: 'Abel', sans-serif;
+
+//desktop
+@media (min-width: 769px){
+    
+    /*Base
+    ------------------------------------------------------------------------*/
+    a{
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+}
+
+/*Header
+-----------------------------------------------------------------------------*/
+header{
+        background: url("../images/IMG_8452.JPG");
+        background-size: cover;
+        background-position: center center;
+        display: block;
+        height: 500px;
+       }
+
+/*Contents
+-----------------------------------------------------------------------------*/
+//Common Style
+section{
+    padding: 60px 0;
+    .container{
+        width:90%;
+        margin: 0 auto;
+    }
+}
+
+//Text
+#text{
+    background-color: $subColor;
+    .container{
+        @include display-flex;
+        justify-content: space-between;
+        @include flex-direction(column);  //縦に並べる
+    }
+    h2{
+        color: $baseColor;
+        margin-bottom: 60px;
+        font-size: 3.2rem;
+        font-weight: bold;
+        text-align: center;
+    }
+    .text-box{
+        @include flex(1);
+        margin: 20px 0;
+        padding: 20px;
+        font-size: 1.6rem;
+        background-color: $baseColor;
+        @include border-radius(4px);
+        @include box-sizing(border-box);
+    }
+    
+    h3{
+        @extend .abel;
+        color: $keyColor;
+        margin-bottom: 10px;
+        font-size: 2.4rem;
+        font-weight: bold;
+    }
+}
+
+//desktop
+@media(min-width: 769px){
+a{
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+  //Text
+  #text{
+      .container{
+          @include flex-direction(row);
+          justify-content: space-between;
+      }
+      .text-box{
+          margin: 0 10px;
+      }
+  }
+}
+
+/*Footer
+----------------------------------------------------------------------------*/
+footer{
+    background-color: $subColor;
+    padding: 10px 0;
+    text-align: center;
+    color: #FFF;
+
+    .button-click{
+        margin: auto;
+        text-align: center;
+        padding: 5px 0;
+        width: 150px;
+        display: block;
+        color: $keyColor;
+        font-weight: bold;
+        background-color: $baseColor;
+        @include border-radius(4px);
+        font-size: 2.4rem;
+    }
+    h2{
+        font-size: 2.4rem;
+        margin: 0 0 5px;
+        font-weight: bold;
+        font: $baseColor;
+    }
+}
+
+
+//desktop
+@media (min-width: 769px){
+    a{
+    &:hover{
+        text-decoration: underline;
+            }
+}
+
+//Contact
+#contact{
+    a{
+        &:hover{
+            background-color: darken($keyColor, 10%)
+        }
+      }
+    }
+}
