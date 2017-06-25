@@ -45,8 +45,11 @@ header {
   background: url("../images/IMG_8452.JPG");
   background-size: cover;
   background-position: center center;
-  display: block;
-  height: 500px; }
+  height: 500px;
+  display: block; }
+  @media (max-width: 768px) {
+    header {
+      height: 250px; } }
 
 /*Contents
 -----------------------------------------------------------------------------*/
